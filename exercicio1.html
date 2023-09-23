@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deslocamento para a direita</title>
+    <style>
+      #quadrado {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Deslocamento do Quadrado</h1>
+
+    <div id="container">
+      <div id="quadrado"></div>
+    </div>
+
+    <script>
+      const quadrado = document.getElementById("quadrado");
+      let posicaoX = 50;
+
+      function transladarQuadrado() {
+        posicaoX += 20;
+        quadrado.style.left = posicaoX + "px";
+      }
+
+      setTimeout(transladarQuadrado, 1000);
+      setTimeout(transladarQuadrado, 2000);
+      setTimeout(transladarQuadrado, 3000);
+      setTimeout(transladarQuadrado, 4000);
+      setTimeout(transladarQuadrado, 5000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reflexão</title>
+    <style>
+      #container {
+        position: relative;
+        width: 400px;
+        height: 200px;
+      }
+
+      .quadrado {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        transition: transform 1s;
+      }
+
+      .quadrado-refletido {
+        background-color: red;
+        margin-left: 110px;
+      }
+
+      .quadrado-refletido2 {
+        background-color: blue;
+        margin-left: 220px;
+        transform: scaleX(-1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reflexão do Quadrado</h1>
+    <p>1. Quadrado é o original</p>
+    <p>2. Quadrado que reflete o original com margem de 10px a esquerda</p>
+    <p>3. Quadrado que realiza a reflexão em relação a um eixo específico</p>
+
+    <div id="container">
+      <div class="quadrado"></div>
+      <div class="quadrado quadrado-refletido"></div>
+      <div class="quadrado quadrado-refletido2"></div>
+    </div>
+
+    <script>
+      const quadradoOriginal = document.querySelector(".quadrado");
+      const quadradoRefletido = document.querySelector(".quadrado-refletido");
+      const quadradoRefletido2 = document.querySelector(".quadrado-refletido2");
+
+      function refletirQuadrado() {
+        quadradoRefletido.classList.toggle("quadrado-refletido");
+        quadradoRefletido2.classList.toggle("quadrado-refletido2");
+      }
+
+      setInterval(refletirQuadrado, 1000);
+    </script>
+  </body>
+</html>
